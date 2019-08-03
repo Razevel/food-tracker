@@ -1,29 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <Application id="app" :class="classes"/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script lang="ts">
+    import { Component, Vue } from 'vue-property-decorator';
+    import Application from './components/Application/Application';
+    import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css'
+    import { isTouch } from './components/Utils/Detection'
+
+    @Component({
+        components: {
+            Application
+        },
+    })
+    export default class App extends Vue {
+        private classes: string | Record<string, boolean> = 'app-is-touch';
+
+        private get classList() {
+            return {
+                'app-is-touch': isTouch(),
+                'app-is-no-touch': !isTouch()
+            }
+        }
+
+        mounted(): void {
+            this.classes = this.classList;
+        }
     }
-  }
-}
-</style>
+</script>
