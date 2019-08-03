@@ -2,14 +2,8 @@
   <div class="components_Button components_circleButton">
     <div class="components_circleButton__relativeWrapper" :style="sizeStyle">
       <div class="components_circleButton__content">
-
-        <span v-if="caption"
-              class="components_circleButton__caption"
-              :class="captionClassList">{{ caption }}</span>
-        <button class="components_circleButton__button"
-                :style="sizeStyle"
-                @click="buttonClick"
-        >
+        <span v-if="caption" :class="captionClassList">{{ caption }}</span>
+        <button class="components_circleButton__button" :style="sizeStyle" @click="buttonClick">
           <slot></slot>
         </button>
       </div>
@@ -20,7 +14,6 @@
 <script lang="ts">
     import { Component } from 'vue-property-decorator';
     import Vue from './../../Vue'
-    import { isTouch } from '../Utils/Detection';
     import { IButton } from "./interface/IButton";
 
 
@@ -48,18 +41,17 @@
     export default class CircleButton extends Vue<ICircleButtonProps> implements IButton {
 
         protected get sizeStyle(): string {
-            let styles = `width: ${this.Props.radius}; height: ${this.Props.radius};`;
-            return styles;
+            return `width: ${this.Props.radius}; height: ${this.Props.radius};`;
         }
 
         private get captionClassList(): string {
-            let classList = '';
+            let classList = 'components_circleButton__caption';
 
 
             if (this.Props.wrapCaption) {
-                classList += 'components_circleButton__caption_wrap';
+                classList += ' components_circleButton__caption_wrap';
             } else {
-                classList += 'components_circleButton__caption_noWrap';
+                classList += ' components_circleButton__caption_noWrap';
             }
 
             if (this.Props.captionClass) {
