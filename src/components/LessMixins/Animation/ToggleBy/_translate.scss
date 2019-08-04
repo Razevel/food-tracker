@@ -1,0 +1,60 @@
+/*
+TODO: Разобраться.
+Хочется сделать так:
+
+@import "visibility";
+
+@mixin translateX_hide(...) {
+  @include visibility_hide(...);
+  ...
+}
+
+чтобы не копипастить, но тогда при импорте этого файла, будут также импортированы и видны миксины из
+файла _opacity. Так делать не хочется, т.к. создаётся путанница в intellij sense.
+
+*/
+@mixin translateX_hide($offsetSize: 100%, $transition: 0.2s, $transitionAnimation: ease-in-out) {
+  opacity: 0;
+  visibility: hidden;
+  filter: alpha(opacity=0);
+  -webkit-transition: all $transition $transitionAnimation;
+  transition: all $transition $transitionAnimation;
+
+  -webkit-transform: translateX(-$offsetSize);
+  transform: translateX(-$offsetSize);
+}
+
+@mixin translateX_show($transition: 0.2s, $transitionAnimation: ease-in-out) {
+  opacity: 1;
+  visibility: visible;
+  filter: alpha(opacity=100);
+  -webkit-transition: all $transition $transitionAnimation;
+  transition: all $transition $transitionAnimation;
+
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+
+
+@mixin translateY_hide($offsetSize: 100%, $transition: 0.2s, $transitionAnimation: ease-in-out) {
+  opacity: 0;
+  visibility: hidden;
+  filter: alpha(opacity=0);
+  -webkit-transition: all $transition $transitionAnimation;
+  transition: all $transition $transitionAnimation;
+
+  -webkit-transform: translateY(-$offsetSize);
+  transform: translateY(-$offsetSize);
+}
+
+@mixin translateY_show($transition: 0.2s, $transitionAnimation: ease-in-out) {
+  opacity: 1;
+  visibility: visible;
+  filter: alpha(opacity=100);
+  -webkit-transition: all $transition $transitionAnimation;
+  transition: all $transition $transitionAnimation;
+
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}

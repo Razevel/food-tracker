@@ -1,0 +1,15 @@
+@mixin visibility_hide($transition: 0.3s, $transitionAnimation: ease-in-out) {
+  opacity: 0;
+  visibility: hidden;
+  filter: alpha(opacity=0);
+  -webkit-transition: all $transition $transitionAnimation;
+  transition: all $transition $transitionAnimation;
+}
+
+@mixin visibility_show($transition: 0.3s, $transitionAnimation: ease-in-out) {
+  opacity: 1;
+  visibility: visible;
+  filter: alpha(opacity=100);
+  -webkit-transition: all $transition $transitionAnimation;
+  transition: all $transition $transitionAnimation;
+}

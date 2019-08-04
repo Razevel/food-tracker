@@ -2,8 +2,8 @@
   <div class="components_Button components_circleButton">
     <div class="components_circleButton__relativeWrapper" :style="sizeStyle">
       <div class="components_circleButton__content">
-        <span v-if="caption" :class="captionClassList">{{ caption }}</span>
-        <button class="components_circleButton__button" :style="sizeStyle" @click="buttonClick">
+        <span v-if="caption" :class="captionClassList" :style="captionStyleList">{{ caption }}</span>
+        <button class="components_circleButton__button" :style="buttonStyle" @click="buttonClick">
           <slot></slot>
         </button>
       </div>
@@ -22,6 +22,8 @@
         wrapCaption?: boolean
         caption?: string
         captionClass?: string
+        backgroundColor?: string
+        color?: string
     }
 
     @Component({
@@ -35,13 +37,25 @@
                 default: false
             },
             caption: String,
-            captionClass: String
+            captionClass: String,
+            backgroundColor: {
+                type: String,
+                default: "initial"
+            },
+            color: {
+                type: String,
+                default: "initial"
+            }
         }
     })
     export default class CircleButton extends Vue<ICircleButtonProps> implements IButton {
 
         protected get sizeStyle(): string {
             return `width: ${this.Props.radius}; height: ${this.Props.radius};`;
+        }
+
+        protected get buttonStyle(): string {
+            return `${this.sizeStyle} background-color: ${this.Props.backgroundColor}; color: ${this.Props.color};`;
         }
 
         private get captionClassList(): string {
@@ -59,6 +73,11 @@
             }
 
             return classList
+        }
+
+        private get captionStyleList(): string {
+            let styles = `background-color: ${this.Props.backgroundColor}; color: ${this.Props.color};`;
+            return styles;
         }
 
         private buttonClick(e: MouseEvent): void {
@@ -87,7 +106,12 @@
   }
 
   .components_circleButton__caption {
-    padding-right: 10px;
+    font-size: 12px;
+    padding: 2px 4px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    margin-right: 3px;
+    cursor: pointer;
   }
 
   .components_circleButton__caption_wrap {
@@ -102,5 +126,6 @@
     flex-shrink: 0;
     border-radius: 50%;
     border: 0;
+    cursor: pointer;
   }
 </style>

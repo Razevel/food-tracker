@@ -5,6 +5,7 @@
         <MainLogo class="components_App_Header__logo"/>
       </div>
       <div class="components_App_Header__centerColumn">
+        <router-link to="/meals">Продукты</router-link>&nbsp;|&nbsp;
         <router-link to="/diary">Дневник</router-link>&nbsp;|&nbsp;
         <router-link to="/">Home</router-link>&nbsp;|&nbsp;
         <router-link to="/about">About</router-link>
