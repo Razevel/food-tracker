@@ -42,7 +42,7 @@
     import { Component } from 'vue-property-decorator';
     import Vue from './../../Vue';
     import CircleButton, { ICircleButtonProps } from './Circle';
-    import { isTouch } from '../Utils/Detection';
+    import { isTouch } from './../../Types/Utils/Detection';
 
 
     interface IDropdownButtonsProps {

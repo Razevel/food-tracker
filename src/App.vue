@@ -6,7 +6,7 @@
     import { Component, Vue } from 'vue-property-decorator';
     import Application from './components/Application/Application';
     import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css'
-    import { isTouch } from './components/Utils/Detection'
+    import { isTouch } from './Types/Utils/Detection'
 
     @Component({
         components: {

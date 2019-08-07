@@ -127,7 +127,7 @@
 </script>
 
 <style lang="scss">
-  @import "../LessMixins/Animation/ToggleBy/visibility";
+  @import "./../../controls/LessMixins/Animation/ToggleBy/visibility";
 
   .components_Nutrition__Product {
     background-color: #fff;

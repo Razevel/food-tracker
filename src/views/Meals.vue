@@ -17,10 +17,10 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import DropdownButton from './../components/Button/Dropdown';
+    import DropdownButton from './../controls/Button/Dropdown';
     import Product from './../components/Nutrition/Product';
-    import {Model} from '../Types/Model';
-    import {Products} from '../Tmp/MockedData';
+    import {Model} from './../Types/Model';
+    import {Products} from './../Tmp/MockedData';
 
     @Component({
         components: {

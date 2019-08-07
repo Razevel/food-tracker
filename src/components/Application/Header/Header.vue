@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-    import Vue from '../../../Vue';
+    import Vue from './../../../Vue';
     import { Component } from 'vue-property-decorator';
     import MainLogo from './MainLogo';
 
