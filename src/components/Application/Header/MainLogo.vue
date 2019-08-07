@@ -1,7 +1,11 @@
 <template>
   <div class="components_App_MainLogo__logo">
-    <span class="components_App_MainLogo__logo__big">{{ mainText }}</span>
-    <span class="components_App_MainLogo__logo__small">{{ additionalText }}</span>
+    <router-link to="/" tag="span" exact class="components_App_MainLogo__logo__big">
+      {{ mainText }}
+    </router-link>
+    <router-link to="/" tag="span" exact class="components_App_MainLogo__logo__small">
+      {{ additionalText }}
+    </router-link>
   </div>
 </template>
 
@@ -33,6 +37,10 @@
     flex-direction: column;
   }
 
+  .components_App_MainLogo__logo__big,
+  .components_App_MainLogo__logo__small {
+    cursor: pointer;
+  }
   .components_App_MainLogo__logo__big {
     font-size: 24px;
     font-weight: bold;

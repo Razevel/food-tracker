@@ -29,7 +29,6 @@
 
       <div class="components_Nutrition__Product__card__secondLine">
         <div class="components_Nutrition__Product__kbjy">
-
           <CircleProgressBar :radius="kbjyIndicatorRadius" class="components_Nutrition__Product__kbjyProgress">
             <template v-slot:innerLabel>
               <div class="components_Nutrition__Product__bkjyProgress__innerLabel">{{ Props.product.get('k') }}</div>
@@ -38,7 +37,6 @@
               <div class="components_Nutrition__Product__bkjyProgress__outerLabel">ККал</div>
             </template>
           </CircleProgressBar>
-
 
           <CircleProgressBar :radius="kbjyIndicatorRadius" class="components_Nutrition__Product__kbjyProgress">
             <template v-slot:innerLabel>
@@ -49,7 +47,6 @@
             </template>
           </CircleProgressBar>
 
-
           <CircleProgressBar :radius="kbjyIndicatorRadius" class="components_Nutrition__Product__kbjyProgress">
             <template v-slot:innerLabel>
               <div class="components_Nutrition__Product__bkjyProgress__innerLabel">{{ Props.product.get('j') }}</div>
@@ -58,7 +55,6 @@
               <div class="components_Nutrition__Product__bkjyProgress__outerLabel">Жиры</div>
             </template>
           </CircleProgressBar>
-
 
           <CircleProgressBar :radius="kbjyIndicatorRadius" class="components_Nutrition__Product__kbjyProgress">
             <template v-slot:innerLabel>
